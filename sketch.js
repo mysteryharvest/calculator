@@ -106,7 +106,7 @@ function calculate() {
         result += 12;
         break;
       case 'X':
-        result += 5;
+        result += 8;
         break;
       case 'T':
         if (word[i + 1] == 'H') {

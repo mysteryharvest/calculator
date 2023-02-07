@@ -54,7 +54,7 @@ function calculate() {
         }
         break;
       case 'S':
-        if (word[i + 1] == 'H') {
+        if (word[i - 1] == 'H') {
           result += 2;
         } else {
           result += 3;
@@ -100,7 +100,7 @@ function calculate() {
         result += 8;
         break;
       case 'C':
-        if (word[i + 1] == 'H') {
+        if (word[i - 1] == 'H') {
           result += 1;
         } else {
           result += 5;

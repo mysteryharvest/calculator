@@ -1,33 +1,112 @@
 let input;
+let resultP;
+let submitButton;
 
 function setup() {
+  createCanvas(400, 400);
+
   input = createInput();
   input.position(20, 65);
 
-  button = createButton("Submit");
-  button.position(input.x + input.width, 65);
-  button.mousePressed(calculateValue);
+  submitButton = createButton('Submit');
+  submitButton.position(input.x + input.width, 65);
+  submitButton.mousePressed(calculate);
+
+  resultP = createP('');
+  resultP.position(20, 100);
 }
 
-function calculateValue() {
+function calculate() {
   let word = input.value();
   word = word.toUpperCase();
-  let value = 0;
+  let result = 0;
   for (let i = 0; i < word.length; i++) {
-    if (word.substring(i, i + 2) === "CH") {
-      value += 1;
-    } else if (word.substring(i, i + 2) === "SH") {
-      value += 2;
-    } else if (word[i] === "S") {
-      value += 3;
-    } else if (word[i] === "Z") {
-      value += 4;
-    } else if (word[i] === "H") {
-      value += 5;
-    } else if (word[i] === "F") {
-      value += 6;
-    } else if (word[i] === "R") {
-      value += 7;
-    } else if (word[i] === "Y") {
-      value += 8;
-    } else if (word[i] === "J") {
+    switch (word[i]) {
+      case 'A':
+        result += 10;
+        break;
+      case 'E':
+        result += 20;
+        break;
+      case 'I':
+        result += 30;
+        break;
+      case 'O':
+        result += 40;
+        break;
+      case 'U':
+        result += 70;
+        break;
+      case 'G':
+        result += 80;
+        break;
+      case 'M':
+        result += 90;
+        break;
+      case 'N':
+        result += 100;
+        break;
+      case 'H':
+        if (word[i - 1] == 'C' || word[i - 1] == 'S') {
+          result += 1;
+        } else {
+          result += 5;
+        }
+        break;
+      case 'S':
+        if (word[i - 1] == 'S') {
+          result += 3;
+        } else {
+          result += 2;
+        }
+        break;
+      case 'Z':
+        result += 4;
+        break;
+      case 'F':
+        result += 6;
+        break;
+      case 'R':
+        result += 7;
+        break;
+      case 'Y':
+        result += 8;
+        break;
+      case 'J':
+        result += 9;
+        break;
+      case 'B':
+        result += 1;
+        break;
+      case 'P':
+        result += 2;
+        break;
+      case 'T':
+        result += 3;
+        break;
+      case 'D':
+        result += 4;
+        break;
+      case 'K':
+        result += 5;
+        break;
+      case 'L':
+        result += 6;
+        break;
+      case 'W':
+        result += 7;
+        break;
+      case 'V':
+        result += 8;
+        break;
+      case 'T':
+        if (word[i + 1] == 'H') {
+          result += 9;
+        } else {
+          result += 3;
+        }
+        break;
+    }
+  }
+  resultP.html('Result: ' + result);
+}

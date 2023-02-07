@@ -99,6 +99,15 @@ function calculate() {
       case 'V':
         result += 8;
         break;
+      case 'C':
+        result += 5;
+        break;
+      case 'Q':
+        result += 12;
+        break;
+      case 'X':
+        result += 5;
+        break;
       case 'T':
         if (word[i + 1] == 'H') {
           result += 9;

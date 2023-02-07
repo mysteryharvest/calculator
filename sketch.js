@@ -113,7 +113,7 @@ function calculate() {
         result += 8;
         break;
       case 'T':
-        if (word[i + 1] == 'H') {
+        if (word[i - 1] == 'H') {
           result += 9;
         } else {
           result += 3;

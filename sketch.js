@@ -2,6 +2,12 @@ let val;
 let resultP;
 let submitButton;
 
+
+// preload JSON data
+function preload(){
+  myDictionary = loadJSON("words.json");
+}
+
 function setup() {
   createCanvas(400, 400);
 
@@ -150,4 +156,5 @@ function calculate() {
     }
   }
   resultP.html('Result: ' + result);
+  resultP.html('Correspondences: ' + myDictionary[result])
 }

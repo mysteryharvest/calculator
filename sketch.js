@@ -28,11 +28,6 @@ function calculate() {
   let result = 0;
   
   for (let i = 0; i < word.length; i++) {
-    console.log("index i:" + i);
-    console.log("char: " + word[i]);
-    console.log("result: " + result);
-    
-
     // if second of a double letter (OO, TT, MM, DD, etc),
     // just skip.
     if (word[i] == word[i-1] && word[i] != 'O' && word[i] != 'E') {
@@ -161,11 +156,12 @@ function calculate() {
 }
  
 function changeNumericalValue(numericalValue) {
-  document.getElementById("numericalValue").innerHTML = numericalValue; 
+  var html = "<h3>Numerical Value:</h3>" + numericalValue;
+  document.getElementById("numericalValue").innerHTML = html; 
 }
 
 function changeCorrespondenceText(words){
-  var html = "<ul>";
+  var html = "<h3>Correspondences: </h3><ul>";
   words.forEach(function(word, index) {
     html = html + "<li>" + word + "</li>"; 
   });

@@ -161,7 +161,13 @@ function calculate() {
 }
  
 function changeNumericalValue(value) {
- document.getElementById("numericalValue").innerHTML = text; 
+ let arr = value.split(',');
+ var html = "<ul>";
+ arr.forEach(function(word, index) {
+    html = html + "<li>" + word + "</li>"; 
+ });
+ html = html + "</ul>";    
+ document.getElementById("numericalValue").innerHTML = html; 
 }
 
 function changeCorrespondenceText(text){

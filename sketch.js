@@ -160,14 +160,14 @@ function calculate() {
   changeCorrespondenceText(myDictionary[result]);
 }
  
-function changeNumericalValue(value) {
- let arr = value.split(',');
- var html = "<ul>";
- arr.forEach(function(word, index) {
+function changeNumericalValue(words) {
+  var html = "<ul>";
+  words.forEach(function(word, index) {
     html = html + "<li>" + word + "</li>"; 
- });
- html = html + "</ul>";    
- document.getElementById("numericalValue").innerHTML = html; 
+  });
+  html = html + "</ul>";    
+ 
+  document.getElementById("numericalValue").innerHTML = html; 
 }
 
 function changeCorrespondenceText(text){

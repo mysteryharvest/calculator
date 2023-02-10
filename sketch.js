@@ -160,16 +160,16 @@ function calculate() {
   changeCorrespondenceText(myDictionary[result]);
 }
  
-function changeNumericalValue(words) {
+function changeNumericalValue(numericalValue) {
+  document.getElementById("numericalValue").innerHTML = numericalValue; 
+}
+
+function changeCorrespondenceText(words){
   var html = "<ul>";
   words.forEach(function(word, index) {
     html = html + "<li>" + word + "</li>"; 
   });
   html = html + "</ul>";    
  
-  document.getElementById("numericalValue").innerHTML = html; 
-}
-
-function changeCorrespondenceText(text){
-  document.getElementById("correspondences").innerHTML = text;
+  document.getElementById("correspondences").innerHTML = html;
 }

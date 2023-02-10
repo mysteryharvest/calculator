@@ -42,7 +42,7 @@ function calculate() {
   changeCorrespondenceText(myDictionary[result]);
 }
 
-function runThroughCalulator(word, i) {
+function runThroughCalculator(word, i) {
    let result = 0;
    
   switch (word[i]) {

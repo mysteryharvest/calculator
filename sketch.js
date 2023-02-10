@@ -34,7 +34,18 @@ function calculate() {
       // do nothing
     }
     else {
-    switch (word[i]) {
+      result += runThroughCalculator(word[i]);
+    }
+  }
+ 
+  changeNumericalValue(result);
+  changeCorrespondenceText(myDictionary[result]);
+}
+
+function runThroughCalulator(word, i) {
+   let result = 0;
+   
+  switch (word[i]) {
       case 'A':
         result += 10;
       case 'E':
@@ -124,12 +135,9 @@ function calculate() {
           result += 3;
         }
       }
-    }
-  }
- 
-  changeNumericalValue(result);
-  changeCorrespondenceText(myDictionary[result]);
+      return result;
 }
+
  
 function changeNumericalValue(numericalValue) {
   var html = "<h3>Numerical Value:</h3>" + numericalValue;

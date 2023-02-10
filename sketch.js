@@ -31,7 +31,7 @@ function calculate() {
     // if second of a double letter (OO, TT, MM, DD, etc),
     // just skip.
     if (word[i] == word[i-1] && word[i] != 'O' && word[i] != 'E') {
-      break;
+      return;
     }
     switch (word[i]) {
       case 'A':

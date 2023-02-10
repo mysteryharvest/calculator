@@ -31,14 +31,15 @@ function calculate() {
     // if second of a double letter (OO, TT, MM, DD, etc),
     // just skip.
     if (word[i] == word[i-1] && word[i] != 'O' && word[i] != 'E') {
-      return;
+      // do nothing
     }
+    else {
     switch (word[i]) {
       case 'A':
         result += 10;
       case 'E':
         if (word[i - 1] == 'E') { // Preceding 'E' handled, skip
-          return;
+           // do nothing
         }
         else if (word[i + 1] == 'E') { // deal with double EE
           result += 50;
@@ -50,7 +51,7 @@ function calculate() {
         result += 30;
       case 'O':
         if (word[i - 1] == 'O') { // Preceding 'O' handled, skip
-          return;
+         // do nothing 
         }
         else if (word[i + 1] == 'O') { // deal with double OO
           result += 60;
@@ -68,7 +69,7 @@ function calculate() {
         result += 100;
       case 'H':
         if (word[i - 1] == 'C' || word[i - 1] == 'S'|| word[i - 1] == 'T' || word[i - 1] == 'P') {
-          return; // Let the s, c, t, p deal with it.
+           // Let the s, c, t, p deal with it.
         } else {
           result += 5;
         }
@@ -122,6 +123,7 @@ function calculate() {
         } else {
           result += 3;
         }
+      }
     }
   }
  

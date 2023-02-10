@@ -155,6 +155,15 @@ function calculate() {
         break;
     }
   }
-  resultP.html('Result: ' + result);
-  resultP.html('Correspondences: ' + myDictionary[result])
+ 
+  changeNumericalValue(result);
+  changeCorrespondenceText(myDictionary[result]);
+}
+ 
+function changeNumericalValue(value) {
+ document.getElementById("numericalValue").innerHTML = text; 
+}
+
+function changeCorrespondenceText(text){
+  document.getElementById("correspondences").innerHTML = text;
 }

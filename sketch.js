@@ -34,7 +34,7 @@ function calculate() {
       // do nothing
     }
     else {
-      result += runThroughCalculator(word[i]);
+      result += runThroughCalculator(word, i);
     }
   }
  
